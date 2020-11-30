@@ -53,7 +53,8 @@ public:
     virtual bool                load(std::string name) override;
     virtual void                close() override;
     virtual void                update() override {};
-    
+    void                        update( ofEventArgs &args );
+
     virtual void                play() override;
     virtual void                stop() override;
     
@@ -124,7 +125,6 @@ private:
     void            setVideoPTSLoaded(int64_t pts, bool round_up);
     void            setPTSLoaded(int64_t pts);
     void            setPositionLoaded(float pct);
-    void            update(ofEventArgs& args);
     void            updatePTS();
     void            read(ofxHap::TimeRangeSequence& sequence);
     class AudioOutput : public ofBaseSoundOutput {
